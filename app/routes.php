@@ -11,7 +11,10 @@
 |
 */
 
-Route::get('/', function()
-{
-	return View::make('hello');
+Route::get('/', function(){
+	return Redirect::to('/index');
 });
+
+Route::get('/index', 'PageController@index');
+
+Route::get('/catalog/item/{id}', 'CatalogController@show');
