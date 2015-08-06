@@ -1722,7 +1722,7 @@ ul {
   left: 40%;
   top: 40%;
   margin-top: -15px;
-  margin-left: -100px;
+  margin-left: -99.99999999px;
   width: 200px;
   height: 30px;
   line-height: 30px;
@@ -1887,6 +1887,12 @@ ul {
 .preview-single .preview-single-labels .label-color {
   color: #FFF;
   background-color: #51bbe5;
+  padding: 10px 13px;
+  display: inline-block;
+}
+.preview-single .preview-single-labels .label-color2 {
+  color: #FFF;
+  background-color: #f90;
   padding: 10px 13px;
   display: inline-block;
 }
@@ -2981,3 +2987,4 @@ ul {
     width: 20%;
   }
 }
+/*# sourceMappingURL=main.css.map */

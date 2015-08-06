@@ -116,9 +116,9 @@
     <script type="text/javascript" src="/assets/js/jquery.stellar.min.js"></script>
     <script type="text/javascript" src="/assets/js/jquery.inview.min.js"></script>
 	<script type="text/javascript" src="/assets/js/custom.js"></script>
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
     <script type="text/javascript" src="/assets/flexslider/jquery.flexslider-min.js"></script>
     <script type="text/javascript" src="/assets/lightbox/js/lightbox.min.js"></script>
+    @yield('map')
     
 </body>
 </html>
