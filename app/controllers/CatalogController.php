@@ -10,7 +10,9 @@ class CatalogController extends \BaseController {
 	 */
 	public function index()
 	{
-		//
+		$catalog = Object::where('active', 1)->orderBy('created_at', 'desc')->paginate(12);
+
+		return View::make('pages.catalog', ['objects' => $catalog]);
 	}
 
 	/**

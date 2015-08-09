@@ -14,21 +14,21 @@
                                     <input type="text" placeholder="Номер...">
                                 </div>
                                 <div class="col-sm-6">
-                                    <p>Місцезнаходження</p>
+                                    <p>місцезнаходження</p>
                                     <div class="custom-select">
                                         <div class="custom-select-val"></div>
-                                        <ul class="custom-select-list stroll-list cards">
-                                            <li class="custom-select-default" data-val="">
-                                            	<div class="custom-select-item-content">Будь-яке...</div>
+                                        <ul class="custom-select-list">
+                                            <li class="custom-select-default disabled" data-val="">
+                                                <div class="custom-select-item-content">Будь-яке...</div>
                                             </li>
-                                            <li data-val="Київ">
-                                            	<div class="custom-select-item-content">Київ</div>
+                                            <li data-val="Оренда">
+                                                <div class="custom-select-item-content">Київ</div>
                                             </li>
-                                            <li data-val="Бровари">
-                                            	<div class="custom-select-item-content">Бровари</div>
+                                            <li data-val="Продаж">
+                                                <div class="custom-select-item-content">Київська область</div>
                                             </li>
-                                            <li data-val="Інше">
-                                            	<div class="custom-select-item-content">Інше</div>
+                                            <li data-val="Обмін">
+                                                <div class="custom-select-item-content">Інше</div>
                                             </li>
                                         </ul>
                                         <input type="hidden">
@@ -91,7 +91,7 @@
                         <div class="col-md-6">
                         	<div class="row">
                                 <div class="col-sm-6">
-                                    <p>Мінімальнв ціна</p>
+                                    <p>Мінімальна ціна</p>
                                     <input type="text" placeholder="...">
                                 </div>
                                 <div class="col-sm-6">

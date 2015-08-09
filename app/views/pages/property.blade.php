@@ -291,7 +291,7 @@
                             </div><!-- .section-content -->
                         </section>
                         
-                        {{ Widget::porperySide() }}
+                        {{ Widget::propertySide() }}
                         <!-- <section>
                         	<div class="section-content">
                             	<div class="section-header onscroll-animate" data-animation="fadeInLeft">

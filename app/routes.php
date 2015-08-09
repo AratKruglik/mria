@@ -16,5 +16,6 @@ Route::get('/', function(){
 });
 
 Route::get('/index', 'PageController@index');
+Route::get('/catalog', 'CatalogController@index');
 
 Route::get('/catalog/item/{id}', 'CatalogController@show');
