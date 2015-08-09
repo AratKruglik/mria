@@ -15,6 +15,20 @@ class PageController extends \BaseController {
 		return View::make('pages.home', ['objects' => $objects]);
 	}
 
+	public function showNews() {
+
+		$news = Article::where('active', 1)->paginate(3);
+
+		return View::make('pages.news', ['news' => $news]);
+	}
+
+	public function showNew($id) {
+
+		$new = Article::findOrFail($id);
+
+		return View::make('pages.new', ['new' => $new]);
+	}
+
 	/**
 	 * Show the form for creating a new resource.
 	 * GET /page/create

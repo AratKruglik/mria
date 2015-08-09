@@ -128,6 +128,7 @@ return array(
 		'Mohsen\Captcha\CaptchaServiceProvider',
 		'Intervention\Image\ImageServiceProvider',
 		'Arrilot\Widgets\ServiceProvider',
+		'Laravelrus\LocalizedCarbon\LocalizedCarbonServiceProvider',
 
 	),
 
@@ -200,6 +201,8 @@ return array(
 		'Captcha'       => 'Mohsen\Captcha\Captcha',
 		'Image' 	=> 'Intervention\Image\Facades\Image',
 		'Widget'     => 'Arrilot\Widgets\Facade',
+		'LocalizedCarbon'   => 'Laravelrus\LocalizedCarbon\LocalizedCarbon',
+		'DiffFormatter'     => 'Laravelrus\LocalizedCarbon\DiffFactoryFacade',
 
 	),
 
