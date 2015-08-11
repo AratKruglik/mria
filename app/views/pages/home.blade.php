@@ -1,7 +1,7 @@
 @extends('layouts.layout')
-@section('title')Раді вітати!@stop
-@section('meta_d')Ключове описання@stop
-@section('meta_k')Ключове описання@stop
+@section('title') Раді вітати! @stop
+@section('meta_d') Ключове описання @stop
+@section('meta_k') Ключове описання @stop
 @section('content')
 <section>
         <div id="main-slider">

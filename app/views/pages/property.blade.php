@@ -1,8 +1,8 @@
 @extends('layouts.layout')
 
-@section('meta_d')@stop
+@section('meta_d') v123 @stop
 
-@section('meta_k')@stop
+@section('meta_k') 12313 @stop
 
 @section('title') {{ $item->name }} @stop
 
@@ -17,7 +17,7 @@
       codeAddress(geocoder, map);
     }
     function codeAddress(geocoder, map) {
-      var address = "Ukraine, Kyiv";
+      var address = "{{ $item->address }}";
       geocoder.geocode( { 'address': address}, function(results, status) {
         if (status == google.maps.GeocoderStatus.OK) {
           map.setCenter(results[0].geometry.location);
