@@ -1,36 +1,23 @@
 <?php
 
-class PageController extends \BaseController {
+class ArticlesController extends \BaseController {
 
 	/**
 	 * Display a listing of the resource.
-	 * GET /page
+	 * GET /articles
 	 *
 	 * @return Response
 	 */
 	public function index()
 	{
+		$articles = Article::where('active', 1)->paginate(4);
 
-		return View::make('pages.home');
-	}
-
-	public function showNews() {
-
-		$news = Article::where('active', 1)->paginate(3);
-
-		return View::make('pages.news', ['news' => $news]);
-	}
-
-	public function showNew($id) {
-
-		$new = Article::findOrFail($id);
-
-		return View::make('pages.new', ['new' => $new]);
+		return View::make('pages.articles')->with('articles', $articles);
 	}
 
 	/**
 	 * Show the form for creating a new resource.
-	 * GET /page/create
+	 * GET /articles/create
 	 *
 	 * @return Response
 	 */
@@ -41,7 +28,7 @@ class PageController extends \BaseController {
 
 	/**
 	 * Store a newly created resource in storage.
-	 * POST /page
+	 * POST /articles
 	 *
 	 * @return Response
 	 */
@@ -52,19 +39,21 @@ class PageController extends \BaseController {
 
 	/**
 	 * Display the specified resource.
-	 * GET /page/{id}
+	 * GET /articles/{id}
 	 *
 	 * @param  int  $id
 	 * @return Response
 	 */
 	public function show($id)
 	{
-		//
+		$article = Article::findOrFail($id);
+
+		return View::make('pages.article')->with('article', $article);
 	}
 
 	/**
 	 * Show the form for editing the specified resource.
-	 * GET /page/{id}/edit
+	 * GET /articles/{id}/edit
 	 *
 	 * @param  int  $id
 	 * @return Response
@@ -76,7 +65,7 @@ class PageController extends \BaseController {
 
 	/**
 	 * Update the specified resource in storage.
-	 * PUT /page/{id}
+	 * PUT /articles/{id}
 	 *
 	 * @param  int  $id
 	 * @return Response
@@ -88,7 +77,7 @@ class PageController extends \BaseController {
 
 	/**
 	 * Remove the specified resource from storage.
-	 * DELETE /page/{id}
+	 * DELETE /articles/{id}
 	 *
 	 * @param  int  $id
 	 * @return Response
