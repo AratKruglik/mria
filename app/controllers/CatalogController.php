@@ -44,21 +44,24 @@ class CatalogController extends \BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function show($id)
+	public function show($slug)
 	{
-		$item = Object::findOrFail($id);
+		$object = Object::where('slug', $slug)->where('active', 1)->get();
 
-		if($item->active !== 1) {
-			return App::abort(404);
-		} else {
+		// if($item->active !== 1) {
+		// 	return App::abort(404);
+		// } else {
 			
-			$photos = Photo::where('object_id',$id)->get();
+			foreach ($object as $item) {
+				$photos = Photo::where('object_id',$item->id)->get();
 			$agent = Agent::where('id', $item->agent_id)->get()->first();
 			$same = Object::where('case_type', $item->case_type)->where('active', 1)->where('id', '!=', $item->id)->orderBy('id', 'desc')->take(2)->get();
 			$type = Type::find($item->type_id);
 			
 			return View::make('pages.property', ['item' => $item, 'photos' => $photos, 'agent' => $agent, 'same_objects' => $same, 'type' => $type]);
-		}
+			}
+			
+		// }
 	}
 
 	/**

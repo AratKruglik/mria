@@ -10,8 +10,8 @@ class PageController extends \BaseController {
 	 */
 	public function index()
 	{
-
-		return View::make('pages.home');
+		$objects = Object::where('active', 1)->orderBy('id', 'desc')->take(6)->get();
+		return View::make('pages.home', ['objects' => $objects]);
 	}
 
 	public function showNews() {
@@ -25,7 +25,7 @@ class PageController extends \BaseController {
 
 		$new = Article::findOrFail($id);
 
-		return View::make('pages.new', ['new' => $new]);
+		return View::make('pages.new', ['news' => $new]);
 	}
 
 	/**

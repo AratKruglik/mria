@@ -9,16 +9,13 @@
                 <div class="container">
                 	<div class="row">
                    		<div class="col-sm-6 pull-right">
-                            <div class="slide-box arrow-left">
-                                <h2>25688 Portafino Pl, Whittier, LA 15998</h2>
-                                <p>An entertainer's paradise in the Friendly Hills community, priced to sell. Featuring 4 spacious bedrooms and 3 bathrooms (one bedroom/bath downstairs), 3170 sq ft of living space with a good size lot at approx.13414 sq ft.</p>
-                                <p><a title="Tooltip example" data-toggle="tooltip" href="#">I'm tooltip</a></p>
-                                <hr>
-                                <a href="#">4 Bedrooms</a> <span class="delimiter-inline"></span> <a href="#">3 Bathrooms</a> <span class="delimiter-inline"></span> <a href="#">1 Kitchen</a> <span class="delimiter-inline"></span> <a href="#">2 Garages</a>
+                            <div class="slide-box"> 
+                            {{-- class="arrow-left" --}}
+                                <h2>Зручний пошук</h2>
+                                <p>Викоричтовуйте нашу систему пошуку і підберіть пропозицію з нерухомості саме для Вас!</p>
                                 <hr>
                                 <div class="slide-price-container">
-                                    <a href="property_single.html#" class="read-more-link-alt">Детальніше</a>
-                                    <p class="listing-price">350.000 грн.</p>
+                                    <a href="/catalog" class="read-more-link-alt">Детальніше</a>
                                 </div>
                             </div>
                        	</div>
@@ -29,7 +26,8 @@
                 <div class="container">
                 	<div class="row">
                    		<div class="col-sm-6 pull-right">
-                            <div class="slide-box-alt arrow-left">
+                            <div class="slide-box-alt">
+                            {{-- class="arrow-right" --}}
                                 <h2>25688 Portafino Pl, Whittier, LA 15998</h2>
                                 <p>An entertainer's paradise in the Friendly Hills community, priced to sell. Featuring 4 spacious bedrooms and 3 bathrooms (one bedroom/bath downstairs), 3170 sq ft of living space with a good size lot at approx.13414 sq ft.</p>
                                 <p><a title="Tooltip example" data-toggle="tooltip" href="#">I'm tooltip</a></p>
@@ -49,7 +47,8 @@
                 <div class="container">
                 	<div class="row">
                    		<div class="col-sm-6">
-                            <div class="slide-box arrow-right">
+                            <div class="slide-box">
+                            {{-- class="arrow-right" --}}
                                 <h2>25688 Portafino Pl, Whittier, LA 15998</h2>
                                 <p>An entertainer's paradise in the Friendly Hills community, priced to sell. Featuring 4 spacious bedrooms and 3 bathrooms (one bedroom/bath downstairs), 3170 sq ft of living space with a good size lot at approx.13414 sq ft.</p>
                                 <p><a title="Tooltip example" data-toggle="tooltip" href="#">I'm tooltip</a></p>
@@ -69,7 +68,8 @@
                 <div class="container">
                 	<div class="row">
                    		<div class="col-sm-6">
-                            <div class="slide-box arrow-right">
+                            <div class="slide-box">
+                            {{-- class="arrow-right" --}}
                                 <h2>25688 Portafino Pl, Whittier, LA 15998</h2>
                                 <p>An entertainer's paradise in the Friendly Hills community, priced to sell. Featuring 4 spacious bedrooms and 3 bathrooms (one bedroom/bath downstairs), 3170 sq ft of living space with a good size lot at approx.13414 sq ft.</p>
                                 <p><a title="Tooltip example" data-toggle="tooltip" href="#">I'm tooltip</a></p>
@@ -99,7 +99,7 @@
        	</div>
     </section> -->
 
-    <section id="mobile-section" class="section-contrast">
+    {{-- <section id="mobile-section" class="section-contrast">
         <div class="bg-image bg-pattern bg-cover bg-fixed">
             <div class="section-content no-offset">
                 <div class="margin-30"></div>
@@ -119,7 +119,7 @@
                 </div><!-- .container -->
             </div><!-- .section-content -->
         </div><!-- .bg-image -->
-    </section>
+    </section> --}}
     
 	<section>
     	<div class="section-content">
@@ -134,7 +134,7 @@
                         <div class="col-md-4 onscroll-animate">
                         <article>
                             <div class="post-preview">
-                                <a href="/catalog/item/{{ $item->id }}">
+                                <a href="/catalog/{{ $item->slug }}">
                                     <section>
                                         <div class="post-preview-img">
                                             <div class="post-preview-img-inner">
@@ -153,7 +153,7 @@
                                     <h2 class="post-preview-heading">{{ $item->name }}</h2>
                                     <p>{{ str_limit($item->description, $limit = 70, $end = '...') }}</p>
                                     <div class="post-preview-price-container">
-                                        <a href="/catalog/item/{{ $item->id }}" class="read-more-link-alt">Детальніше</a>
+                                        <a href="/catalog/{{ $item->slug }}" class="read-more-link-alt">Детальніше</a>
                                         <p class="listing-price">{{ $item->price }} {{ $item->currency }} <span class="small">{{ $item->pay_type }}</span></p>
                                     </div>
                                     <div class="post-preview-detail">
@@ -204,9 +204,9 @@
                                     </div>
                                     <h3>Досвід</h3>
                                     <p>Наш досвід роботи дозволяє допомгти знайти пропозицію саме для вас.</p>
-                                    <div class="read-more-link-container">
-                                    	<a href="blog_single.html" class="read-more-link">Детальніше</a>
-                                    </div>
+                                    {{-- <div class="read-more-link-container">
+                                    	<a href="/about" class="read-more-link">Детальніше</a>
+                                    </div> --}}
                                 </div>
                             </div>
                             <div class="col-sm-6 onscroll-animate" data-delay="400" data-animation="fadeInUp">
@@ -216,9 +216,9 @@
                                     </div>
                                     <h3>Оренда, продаж житла</h3>
                                     <p>Наша база містить широкий вибір будинків, квартир, кімнат для житла або землі.</p>
-                                    <div class="read-more-link-container">
-                                    	<a href="blog_single.html" class="read-more-link">Детальніше</a>
-                                    </div>
+                                    {{-- <div class="read-more-link-container">
+                                    	<a href="/about" class="read-more-link">Детальніше</a>
+                                    </div> --}}
                                 </div>
                             </div>
                     	</div><!-- .row -->
@@ -232,9 +232,9 @@
                                     </div>
                                     <h3>Офіси</h3>
                                     <p>Шукаєте приміщення для оренди чи купівлі під офіс? Ми маємо відмінні пропозиції!</p>
-                                    <div class="read-more-link-container">
-                                    	<a href="blog_single.html" class="read-more-link">Детальніше</a>
-                                    </div>
+                                    {{-- <div class="read-more-link-container">
+                                    	<a href="/about" class="read-more-link">Детальніше</a>
+                                    </div> --}}
                                 </div>
                             </div>
                             <div class="col-sm-6 onscroll-animate" data-delay="800" data-animation="fadeInUp">
@@ -244,9 +244,9 @@
                                     </div>
                                     <h3>Широкий вибір</h3>
                                     <p>Скористайтесь пошуком, щоб знайти необхідну саме для вас пропозицію!</p>
-                                    <div class="read-more-link-container">
-                                    	<a href="blog_single.html" class="read-more-link">Детальніше</a>
-                                    </div>
+                                    {{-- <div class="read-more-link-container">
+                                    	<a href="/about" class="read-more-link">Детальніше</a>
+                                    </div> --}}
                                 </div>
                             </div>
                         </div><!-- .row -->

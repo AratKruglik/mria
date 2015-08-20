@@ -10,6 +10,15 @@
 | and give it the Closure to execute when that URI is requested.
 |
 */
+App::before(function($request) {
+	View::share('configs', DB::table('configs')->get());
+});
+
+App::before(function($request) {
+	View::share('footerArticles', DB::table('articles')->take(5)->get());
+});
+
+
 Route::pattern('id', '[0-9]+');
 Route::pattern('slug', '[a-z]+');
 
@@ -25,4 +34,4 @@ Route::get('/contacts', function() {
 Route::get('/news', 'PageController@showNews');
 Route::get('/news/view/{id}', 'PageController@showNew');
 
-Route::get('/catalog/item/{id}', 'CatalogController@show');
+Route::get('/catalog/{slug}', 'CatalogController@show');

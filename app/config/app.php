@@ -129,6 +129,8 @@ return array(
 		'Intervention\Image\ImageServiceProvider',
 		'Arrilot\Widgets\ServiceProvider',
 		'Laravelrus\LocalizedCarbon\LocalizedCarbonServiceProvider',
+		'Jenssegers\Date\DateServiceProvider',
+		'Ivanlemeshev\Laravel4CyrillicSlug\SlugServiceProvider',
 
 	),
 
@@ -203,6 +205,8 @@ return array(
 		'Widget'     => 'Arrilot\Widgets\Facade',
 		'LocalizedCarbon'   => 'Laravelrus\LocalizedCarbon\LocalizedCarbon',
 		'DiffFormatter'     => 'Laravelrus\LocalizedCarbon\DiffFactoryFacade',
+		'Widget'		  => 'Arrilot\Widgets\Facade',
+		'Slug' 			=> 'Ivanlemeshev\Laravel4CyrillicSlug\Facades\Slug',
 
 	),
 

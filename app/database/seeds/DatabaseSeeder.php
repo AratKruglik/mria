@@ -11,15 +11,23 @@ class DatabaseSeeder extends Seeder {
 	{
 		Eloquent::unguard();
 
-		// $this->call('UserTableSeeder');
-		$faker = Faker\Factory::create();
+		// $this->call('DatabaseSeeder');
+		$faker = Faker\Factory::create('ru_RU');
 
-		for ($i = 0; $i < 52; $i++)
+		for ($i = 0; $i < 20; $i++)
 			{
-			  $user = Photo::create(array(
-			    'object_id' => $faker->numberBetween($min = 1, $max = 52),
-			    'path' => $faker->imageUrl($width = 870, $height = 570)
+			  $object = Article::create(array(
+			  	'name' => $faker->lexify('Заголовок новости ???'),
+			  	'body' => $faker->word,
+			  	'cover' => $faker->imageUrl($width = 850, $height = 550),
 			    ));
+
+			  $objects = Article::all();
+
+			  foreach ($objects as $item) {
+			  	$item->slug = Slug::make($item->name);;
+			  	$item->save();
+			  }
 			}
 	}
 

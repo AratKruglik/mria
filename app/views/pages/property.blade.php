@@ -1,10 +1,10 @@
 @extends('layouts.layout')
 
-@section('meta_d') v123 @stop
+@section('meta_d') @if(isset($item)) {{ $item->meta_d }} @endif @stop
 
-@section('meta_k') 12313 @stop
+@section('meta_k') @if(isset($item)) {{ $item->meta_k }} @endif @stop
 
-@section('title') {{ $item->name }} @stop
+@section('title') @if(isset($item)) {{ $item->name }} @endif @stop
 
 @section('map')
 <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
@@ -25,9 +25,10 @@
               map: map,
               position: results[0].geometry.location
           });
-        } else {
-          alert('Geocode was not successful for the following reason: ' + status);
-        }
+        } 
+        // else {
+        //   alert('Geocode was not successful for the following reason: ' + status);
+        // }
       });
     }
     google.maps.event.addDomListener(window, 'load', initialize);
@@ -55,15 +56,15 @@
                                             <div class="preview-single-labels">
                                                 <div class="clearfix">
                                                     <div class="label-black pull-left">
-                                                        <h3>{{ $item->address }}</h3>
+                                                        {{-- <h3>{{ $item->name }}</h3> --}}
                                                         <p>
                                                             @if(isset($type))
                                                            {{ $type->name }}
                                                             <span class="delimiter-inline-alt"></span> 
                                                             @endif
-                                                            <a href="#">{{ $item->area }} {{ $item->area_type }}</a> 
+                                                            площа: {{ $item->area }} {{ $item->area_type }}
                                                             <span class="delimiter-inline-alt"></span> 
-                                                            <a href="#">кімнат: {{ $item->rooms }}</a>
+                                                            кімнат: {{ $item->rooms }}
                                                         </p>
                                                     </div>
                                                     <div class="label-white pull-right">
@@ -86,15 +87,15 @@
                                             <div class="preview-single-labels">
                                                 <div class="clearfix">
                                                     <div class="label-black pull-left">
-                                                        <h3>{{ $item->address }}</h3>
+                                                        {{-- <h3>{{ $item->name }}</h3> --}}
                                                         <p>
                                                             @if(isset($type))
-                                                            <a href="#">{{ $type->name }}</a> 
+                                                           {{ $type->name }}
                                                             <span class="delimiter-inline-alt"></span> 
                                                             @endif
-                                                            <a href="#">{{ $item->area }} {{ $item->area_type }}</a> 
+                                                            площа: {{ $item->area }} {{ $item->area_type }}
                                                             <span class="delimiter-inline-alt"></span> 
-                                                            <a href="#">кімнат: {{ $item->rooms }}</a>
+                                                            кімнат: {{ $item->rooms }}
                                                         </p>
                                                     </div>
                                                     <div class="label-white pull-right">
@@ -161,6 +162,7 @@
                                 	<h1>Мапа</h1>
                                     <h4>Місцезнаходження на мапі</h4>
                                 </div>
+                                <p><i class="fa fa-map-marker"></i>&nbsp;&nbsp;<strong>{{ $item->address }}</strong></p>
                                 <!-- Google Map -->
                                 <div class="google-map-container">
                                     <div class="google-map">
@@ -232,7 +234,7 @@
                                         @foreach($same_objects as $same)
                                     	<article>
                                             <div class="post-preview-alt">
-                                                <a href="/catalog/item/{{ $same->id }}">
+                                                <a href="/catalog/{{ $same->slug }}">
                                                     <section>
                                                         <div class="post-preview-img">
                                                             <div class="post-preview-img-inner">

@@ -35,7 +35,7 @@
                                 </section>
                                 <div class="post-preview-content">
                                     <h2 class="post-preview-heading"><a href="/news/view/{{ $new->id }}">{{ $new->name }}</a></h2>
-                                    <p class="post-preview-info"><a href="#"><i class="fa fa-user"></i> Johny Bravo</a> <span class="delimiter-inline-alt"></span> <a href="#"><i class="fa fa-comments"></i> 33 comments</a> <span class="delimiter-inline-alt"></span> <a href="#"><i class="fa fa-calendar"></i> {{ $new->created_at->diffForHumans() }}</a></p>
+                                    <p class="post-preview-info"><i class="fa fa-calendar"></i> {{ $new->created_at->diffForHumans() }}</p>
                                     {{ str_limit($new->body, $limit = 100, $end = '...') }}
                                     {{-- <div class="post-preview-detail">
                                         <i class="fa fa-tag"></i> <a href="#">quotes</a>, <a href="#">illustration</a>, <a href="#">design</a>
@@ -201,9 +201,9 @@
                       	</section>
                         
                     	<section>
-                        	<div class="section-content">
-                            	<div class="section-header onscroll-animate" data-animation="fadeInLeft">
-                                    <h1>Share It</h1>
+                            <div class="section-content">
+                                <div class="section-header onscroll-animate" data-animation="fadeInLeft">
+                                    <h1>Поділитись</h1>
                                 </div>
                                 <div class="onscroll-animate" data-animation="fadeInUp">
                                     <div class="social-container">
@@ -213,7 +213,7 @@
                                         <a href="#"><i class="fa fa-twitter"></i></a>
                                     </div>
                                     <div class="social-container">
-                                        <a href="#"><i class="fa fa-rss"></i></a>
+                                        <a href="#"><i class="fa fa-google-plus"></i></a>
                                     </div>
                                     <div class="social-container">
                                         <a href="#"><i class="fa fa-pinterest"></i></a>
