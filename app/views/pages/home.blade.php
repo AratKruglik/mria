@@ -98,28 +98,6 @@
             </div>
        	</div>
     </section> -->
-
-    {{-- <section id="mobile-section" class="section-contrast">
-        <div class="bg-image bg-pattern bg-cover bg-fixed">
-            <div class="section-content no-offset">
-                <div class="margin-30"></div>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-8 onscroll-animate" data-animation="fadeInUp">
-                            <div class="section-header-alt">
-                                <h1><img alt="Hometastic" src="images/logo2.png"> Користуйтесь пошуком нерухомості за допомогою смартфону</h1>
-                            </div>
-                            <p>Тут можна написати крутий текст про переваги користування пошуком з мобільного. Про те, що сайт адаптовано для будь-яких пристроїв та екранів...</p>
-                            <div class="margin-40"></div>
-                        </div>
-                        <!-- <div class="col-md-4" id="mobile-img-col">
-                                <img id="mobile-img" alt="mobile phone" class="img-responsive" src="images/mobile.png">
-                        </div> -->
-                    </div><!-- .row -->
-                </div><!-- .container -->
-            </div><!-- .section-content -->
-        </div><!-- .bg-image -->
-    </section> --}}
     
 	<section>
     	<div class="section-content">

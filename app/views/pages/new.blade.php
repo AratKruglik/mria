@@ -1,7 +1,7 @@
 @extends('layouts.layout')
 
-@section('meta_k') 123 @stop
-@section('meta_d') 123s @stop
+@section('meta_k') {{ $news['meta_k'] }} @stop
+@section('meta_d') {{ $news['meta_d'] }} @stop
 @section('title') {{ $news['name'] }} @stop
 
 @section('content')
@@ -41,46 +41,28 @@
                     
                     <div class="col-md-3 sidebar">
                         
+                       
                         <section>
-                        	<div class="section-content">
-                            	<div class="section-header onscroll-animate" data-animation="fadeInLeft">
+                            <div class="section-content">
+                                <div class="section-header onscroll-animate" data-animation="fadeInLeft">
                                     <h1>Останні новини</h1>
                                 </div>
+                                @foreach($lastnews as $lastnews)
                                 <article class="onscroll-animate" data-animation="fadeInRight">
                                     <div class="post-small">
                                         <div class="post-small-img">
-                                            <a href="#"><img alt="img" src="/images/listings/thumbnails/7.jpg"></a>
+                                            <a href="/news/view/{{ $lastnew->id }}"><img alt="{{ $lastnew->name }}" src="{{ $lastnew->cover }}" class="img-responsive"></a>
                                         </div>
                                         <div class="post-small-content">
-                                            <h5>Awesome Real Estate</h5>
-                                            12.April.2014 <span class="delimiter-inline"></span> <a href="#">2 Comments</a>
+                                            <h5>{{ $lastnew->name }}</h5>
+                                            {{ $lastnew->created_at }} {{-- <span class="delimiter-inline"></span> <a href="#">2 Comments</a> --}}
                                         </div>
                                     </div>
                                 </article>
-                                <article class="onscroll-animate" data-animation="fadeInRight" data-delay="400">
-                                    <div class="post-small">
-                                        <div class="post-small-img">
-                                            <a href="#"><img alt="img" src="/images/listings/thumbnails/8.jpg"></a>
-                                        </div>
-                                        <div class="post-small-content">
-                                            <h5>Wordpress Template</h5>
-                                            12.April.2014 <span class="delimiter-inline"></span> <a href="#">2 Comments</a>
-                                        </div>
-                                    </div>
-                                </article>
-                                <article class="onscroll-animate" data-animation="fadeInRight" data-delay="600">
-                                    <div class="post-small">
-                                        <div class="post-small-img">
-                                            <a href="#"><img alt="img" src="/images/listings/thumbnails/9.jpg"></a>
-                                        </div>
-                                        <div class="post-small-content">
-                                            <h5>PSD Themes for Sale</h5>
-                                            12.April.2014 <span class="delimiter-inline"></span> <a href="#">2 Comments</a>
-                                        </div>
-                                    </div>
-                                </article>
-                          	</div><!-- .section-content -->
-                      	</section>
+                                @endforeach
+                            </div><!-- .section-content -->
+                        </section>
+                        
                         
                         {{ Widget::propertySide() }}
                         
