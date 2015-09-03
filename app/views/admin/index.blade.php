@@ -1,7 +1,7 @@
 @extends('admin.layouts.layout')
 
 @section('title')
-Инфографика
+Інфографіка
 @stop
 
 @section('styles')
@@ -47,7 +47,7 @@
                           </div>
                           <div class="value">
                               <h1 class=" count2">
-                                  {{$orders}}
+                                  {{--$orders--}}
                               </h1>
                               <p>Обработ. заказов</p>
                           </div>
@@ -60,7 +60,7 @@
                           </div>
                           <div class="value">
                               <h1 class=" count3">
-                                  {{$newOrders}}
+                                  {{--$newOrders--}}
                               </h1>
                               <p>Новых заказов</p>
                           </div>
@@ -73,7 +73,7 @@
                           </div>
                           <div class="value">
                               <h1 class=" count4">
-                                  {{$summ}}
+                                  {{--$summ--}}
                               </h1>
                               <p>Сумма заказов</p>
                           </div>
@@ -91,9 +91,9 @@
                               <div class="chart">
                                   <div class="heading">
                                       <span>Продажи за неделю</span>
-                                      <strong>{{$summ}} грн. | 15%</strong>
+                                      <strong>{{--$summ--}} грн. | 15%</strong>
                                   </div>
-                                  <div class="sparkline" data-type="line" data-resize="true" data-height="75" data-width="90%" data-line-width="1" data-line-color="#fff" data-spot-color="#fff" data-fill-color="" data-highlight-line-color="#fff" data-spot-radius="4" data-data="[{{$summ}},135,667,333,526,996,564,123,890,564,455]"></div>
+                                  <div class="sparkline" data-type="line" data-resize="true" data-height="75" data-width="90%" data-line-width="1" data-line-color="#fff" data-spot-color="#fff" data-fill-color="" data-highlight-line-color="#fff" data-spot-radius="4" data-data="[135,667,333,526,996,564,123,890,564,455]"></div>
                               </div>
                           </div>
                           <div class="chart-tittle">

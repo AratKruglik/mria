@@ -7,29 +7,29 @@
 @section('content')
 
 {{Form::open(['class' => 'form-signin'])}}
-        <h2 class="form-signin-heading">Войти в админпанель</h2>
+        <h2 class="form-signin-heading">Увійти в адмінпанель</h2>
         <div class="login-wrap">
         @if (Session::has('alert'))
             <div class="alert alert-block alert-danger fade in">
                 <button data-dismiss="alert" class="close close-sm" type="button">
                     <i class="icon-remove"></i>
                 </button>
-                <strong>Ошибка!</strong> {{ Session::get('alert') }}
+                <strong>Помилка!</strong> {{ Session::get('alert') }}
             </div>
         @endif
-            <input type="text" class="form-control" name="username" placeholder="Email" autofocus />
+            <input type="text" class="form-control" name="username" placeholder="Email або логін" autofocus />
             <input type="password" class="form-control" name="password" placeholder="Пароль" />
             <label class="checkbox">
-                <input type="checkbox" name="remember" value="remember-me" /> Запомнить меня
+                <input type="checkbox" name="remember" value="remember-me" /> Запам'ятати мене
                 <span class="pull-right">
-                    <a data-toggle="modal" href="#myModal"> Забыли пароль?</a>
+                    <a data-toggle="modal" href="#myModal"> Забули пароль?</a>
                 </span>
             </label>
-            <input type="submit" class="btn btn-lg btn-login btn-block" value="Войти" />
+            <input type="submit" class="btn btn-lg btn-login btn-block" value="Увійти" />
 {{Form::close()}}
             <div class="registration">
                 <a class="" href="/users/register">
-                    Зарегистрироваться
+                    Зареєструватись
                 </a>
             </div>
         </div>
@@ -41,7 +41,7 @@
                     {{Form::open( ['action' => 'RemindersController@postRemind', 'method' => 'post'])}}
                       <div class="modal-header">
                           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                          <h4 class="modal-title">Забыли пароль?</h4>
+                          <h4 class="modal-title">Забули пароль?</h4>
                       </div>
                       <div class="modal-body">
                       @if (Session::has('status'))
@@ -53,12 +53,12 @@
                               {{ Session::get('error') }}
                           </div>
                       @endif
-                          <p>Введите ваш Email для сброса пароля</p>
+                          <p>Введіть Ваш email для скидання пароля</p>
                           <input type="text" name="email" placeholder="Email" autocomplete="off" class="form-control placeholder-no-fix">
                       </div>
                       <div class="modal-footer">
                           <!-- <button data-dismiss="modal" class="btn btn-default" type="button">Отмена</button> -->
-                          <input class="btn btn-success" type="submit" value="Сбросить пароль" />
+                          <input class="btn btn-success" type="submit" value="Скинути пароль" />
                       </div>
                     {{Form::close()}}
                   </div>

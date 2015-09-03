@@ -11,76 +11,100 @@ class DashboardController extends \BaseController {
 	public function index() {
 
 		$users = User::all();
-		$orders = Order::where('processed', 1)->count();
-		$newOrders = Order::where('processed', 0)->count();
-		$summ = 0;
-		foreach (Order::all() as $order1) {
-			$summ = $summ + $order1->summ;
-		}
-		return View::make('admin.index')->with('users', $users)->with('orders', $orders)->with('newOrders', $newOrders)->with('summ', $summ);
+
+		return View::make('admin.index')->with('users', $users);
+	}
+
+	// OBJECTS
+	public function objects() {
+		$users = User::all();
+
+		return View::make('admin.index')->with('users', $users);
+	}
+	//END
+	
+
+
+
+
+
+
+
+
+
+public function getPages() {
+		return View::make('admin.index');
 	}
 
 
-	//GOODS FUNCTIONS
-	public function goods() {
-		$goods = Good::all();
-		return View::make('admin.goods')->with('goods', $goods);
+	public function articles2() {
+		return View::make('admin.index');
 	}
 
-	public function goodAdd() {
+
+	// ARTICLES FUNCTIONS
+
+	public function articles() {
+		$articles = Article::all();
+		return View::make('admin.articles', ['articles' => $articles]);
+	}
+
+	public function articleAdd() {
 		$data = Input::all();
-
-		$validator = Validator::make($data, Good::rules(), Good::errors());
+		
+		$validator = Validator::make($data, Article::rules(), Article::errors());
 
 		if ($validator->fails()) {
 			return Redirect::back()->withErrors($validator)->withInput();
+		
 		} else {
-			$item = Good::goodAdd($data);
+			
+			$item = Article::articleAdd($data);
 
 			if (Input::hasFile('cover')) {
-				Good::coverUpload(Input::file('cover'), $item->id);
+				Article::coverUpload(Input::file('cover'), $item->id);
 			 }
 
 			 if (Input::hasFile('thumb_cover')) {
-				Good::thumbUpload(Input::file('thumb_cover'), $item->id);
+				Article::thumbUpload(Input::file('thumb_cover'), $item->id);
 			 }
 
-			$message = 'Товар '.$item->name.' успешно добавлен в базу';
+			$message = 'Статья '.$item->name.' успешно добавлена в базу';
 
-			return Redirect::to('/dashboard/goods')->with('mess', $message);
+			return Redirect::to('/dashboard/articles')->with('mess', $message);
 		}
 
 	}
 
-	public function goodEdit($id) {
+	public function articleEdit($id) {
 		$data = Input::all();
 
-		$validator = Validator::make($data, Good::rules(), Good::errors());
+		$validator = Validator::make($data, Article::rules(), Article::errors());
 
 		if ($validator->fails()) {
 			return Redirect::back()->withErrors($validator)->withInput();
 		} else {
-			$item = Good::goodEdit($data, $id);
+			$item = Article::articleEdit($data, $id);
 			
 			if (Input::hasFile('cover')) {
-				Good::coverUpload(Input::file('cover'), $item->id);
+				Article::coverUpload(Input::file('cover'), $item->id);
 			 }
 
 			 if (Input::hasFile('thumb_cover')) {
-				Good::thumbUpload(Input::file('thumb_cover'), $item->id);
+				Article::thumbUpload(Input::file('thumb_cover'), $item->id);
 			 }
 
-			$message = 'Товар '.$item->name.' успешно изменен';
+			$message = 'Статья '.$item->name.' успешно изменена';
 
-			return Redirect::to('/dashboard/goods')->withMess($message);
+			return Redirect::to('/dashboard/articles')->withMess($message);
 		}
 
 	}
 
-	public function goodDrop($id) {
-		$item = Good::find($id);
+	public function articleDrop($id) {
+		$item = Article::find($id);
 
-		$dir = public_path().'/images/goods/'.$item->id.'/';
+		$dir = public_path().'/images/articles/'.$id.'/';
 		
 		if ($objs = glob($dir."/*")) {
 		   foreach($objs as $obj) {
@@ -89,61 +113,10 @@ class DashboardController extends \BaseController {
     	}
     	rmdir($dir);
 
-		$message = 'Товар '.$item->name.' успешно удален';
+		$message = 'Статья '.$item->name.' успешно удалена';
 		$item->delete();
 
-		return Redirect::to('/dashboard/goods')->withMess($message);
-	}
-
-////
-
-	//CATEGORIES FUNCTIONS
-	public function categories() {
-		$categories = Category::all();
-		return View::make('admin.categories')->with('categories', $categories);
-	}
-
-
-	public function categoryAdd() {
-		$data = Input::all();
-
-		$validator = Validator::make($data, Category::rules(), Category::errors());
-
-		if ($validator->fails()) {
-			return Redirect::back()->withErrors($validator)->withInput();
-		} else {
-			$item = Category::categoryAdd($data);
-
-			$message = 'Категория '.$item->name.' успешно добавлена в базу';
-
-			return Redirect::to('/dashboard/categories')->with('mess', $message);
-		}
-	}
-
-	public function categoryEdit($id) {
-		$data = Input::all();
-
-		$validator = Validator::make($data, Category::rules(), Category::errors());
-
-		if ($validator->fails()) {
-			return Redirect::back()->withErrors($validator)->withInput();
-		} else {
-
-			$item = Category::categoryEdit($data, $id);
-
-			$message = 'Категория '.$item->name.' успешно изменена';
-
-			return Redirect::to('/dashboard/categories')->with('mess', $message);
-		}
-	}
-
-	public function categoryDrop($id) {
-		$item = Good::find($id);
-
-		$message = 'Категория '.$item->name.' успешно удалена';
-		$item->delete();
-
-		return Redirect::to('/dashboard/categories')->withMess($message);
+		return Redirect::to('/dashboard/articles')->withMess($message);
 	}
 
 	

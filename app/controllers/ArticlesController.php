@@ -48,8 +48,9 @@ class ArticlesController extends \BaseController {
 	{
 		$article = Article::findOrFail($id);
 		$news = Article::where('active', 1)->orderBy('id', 'desc')->take(3)->get();
+		$property = Object::where('active', 1)->orderBy('id', 'desc')->take(1)->get();
 
-		return View::make('pages.article', ['article' => $article])->with('lastnews', $news);
+		return View::make('pages.article')->with('article', $article)->with('lastnews', $news)->with('lastproperty', $property);
 	}
 
 	/**

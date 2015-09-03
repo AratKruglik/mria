@@ -15,7 +15,7 @@
             	<a href="/users/login"><i class="fa fa-user"></i> Увійти</a>
             </div>
             <div class="site-top-item">
-            	<a href="/users/registration"><i class="fa fa-pencil"></i> Реєстрація</a>
+            	<a href="/users/register"><i class="fa fa-pencil"></i> Реєстрація</a>
             </div>
             {{-- <div class="site-top-item">
             	<form id="form-top-search">

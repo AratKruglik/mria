@@ -41,7 +41,7 @@
                     
                     <div class="col-md-3 sidebar">
                         
-                       
+                       @if(isset($lastnews))
                         <section>
                             <div class="section-content">
                                 <div class="section-header onscroll-animate" data-animation="fadeInLeft">
@@ -62,10 +62,11 @@
                                 @endforeach
                             </div><!-- .section-content -->
                         </section>
-                        
+                        @endif
                         
                         {{ Widget::propertySide() }}
                         
+                        @if(isset($lastproperty))
                     	<section>
                         	<div class="section-content">
                             	<div class="section-header onscroll-animate" data-animation="fadeInLeft">
@@ -75,10 +76,10 @@
                                     <a href="#">
                                         <section>
                                             <div class="post-preview-img">
-                                                <img alt="post img" src="/images/listings/6.jpg">
+                                                <img alt="post img" src="{{ $lastproperty['cover'] }}">
                                                 <div class="post-preview-label-big">
-                                                	California Residence<br>
-                                                    <strong>$300.000.00</strong>
+                                                	{{ $lastproperty['name'] }}<br>
+                                                    <strong>{{ $lastproperty['price'] }}{{ $lastproperty['currency'] }}</strong>
                                                 </div>
                                             </div>
                                         </section>
@@ -86,6 +87,7 @@
                                 </div>
                           	</div>
                      	</section>
+                        @endif
 
                         
                         <section>

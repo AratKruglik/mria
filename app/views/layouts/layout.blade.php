@@ -67,12 +67,18 @@
                 @endforeach
                 </div>
                 <div class="pull-right">
+                    @if(Auth::check()) 
+                        <div class="site-top-item">
+                            <a href="/dashboard"><i class="fa fa-user"></i> {{ Auth::user()->username }}</a>
+                        </div>
+                    @else
                     <div class="site-top-item">
                         <a href="/users/login"><i class="fa fa-user"></i> Увійти</a>
                     </div>
                     <div class="site-top-item">
-                        <a href="/users/registration"><i class="fa fa-pencil"></i> Реєстрація</a>
+                        <a href="users/register"><i class="fa fa-pencil"></i> Реєстрація</a>
                     </div>
+                    @endif
                     {{-- <div class="site-top-item">
                         <form id="form-top-search">
                             <input type="text" name="s">

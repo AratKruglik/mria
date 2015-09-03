@@ -24,14 +24,14 @@ class UserController extends BaseController {
     	$id = $user->register();
  
     	// Вывод информационного сообщения об успешности регистрации
-    	return $this->getMessage("Регистрация почти завершена. Вам необходимо подтвердить e-mail, указанный при регистрации, перейдя по ссылке в письме.");
+    	return $this->getMessage("Реєстрація майже завершена. Вам необхідно підтвердити e-mail, вказаний при реєстрації, перейдіть за посиланням в листі.");
 	}
 
 	public function getActivate($userId, $activationCode) {
     	// Получаем указанного пользователя
     	$user = User::find($userId);
     	if (!$user) {
-        	return $this->getMessage("Неверная ссылка на активацию аккаунта.");
+        	return $this->getMessage("Невірне посилання активації аккаунту.");
     	}
  
     	// Пытаемся его активировать с указанным кодом
@@ -39,11 +39,11 @@ class UserController extends BaseController {
         	// В случае успеха авторизовываем его
         	Auth::login($user);
         	// И выводим сообщение об успехе
-        	return $this->getMessage("Аккаунт активирован", "/");
+        	return $this->getMessage("Аккаунт активовано", "/");
     	}
  
     	// В противном случае сообщаем об ошибке
-    	return $this->getMessage("Неверная ссылка на активацию аккаунта, либо учетная запись уже активирована.");
+    	return $this->getMessage("Невірне посилання для активації аккаунта або аккаунт вже активовано.");
 	}
 
 	public function getLogin() {
@@ -76,7 +76,7 @@ class UserController extends BaseController {
 	        Log::info("User [{$username}] failed to login.");
 	    }
 	 
-	    $alert = "Неверная комбинация имени (email) и пароля, либо учетная запись еще не активирована.";
+	    $alert = "Невірна комбінація (email) та пароля, або аккаунт ще не активовано.";
 	 
 	    // Возвращаем пользователя назад на форму входа с временной сессионной
 	    // переменной alert (withAlert)
