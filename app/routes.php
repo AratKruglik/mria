@@ -52,6 +52,24 @@ Route::group(['prefix' => 'dashboard', 'before' => 'auth'], function(){
 
     //objects
     Route::get('objects', 'DashboardController@objects');
+    Route::get('objects/add', function(){
+    	$types = Type::all();
+        return View::make('admin.object', ['types' => $types]);
+    });
+    Route::get('objects/edit/{id}', function($id) {
+        $item = Object::findOrFail($id);
+        $types = Type::all();
+        return View::make('admin.object',['item' => $item, 'types' => $types]);
+    });
+
+    Route::post('objects/add', 'DashboardController@objectAdd');
+    Route::post('objects/edit/{id}', 'DashboardController@objectEdit');
+    Route::get('objects/drop/{id}', 'DashboardController@objectDrop');
+    //end
+
+    //album
+    
+    //end
     
 
     // articles
@@ -66,6 +84,7 @@ Route::group(['prefix' => 'dashboard', 'before' => 'auth'], function(){
     Route::post('articles/add', 'DashboardController@articleAdd');
     Route::post('articles/edit/{id}', 'DashboardController@articleEdit');
     Route::post('articles/drop/{id}', 'DashboardController@articleDrop');
+    //end
 
 
 
@@ -84,4 +103,4 @@ Route::get('/contacts', function() {
 Route::get('/news', 'PageController@showNews');
 Route::get('/news/view/{id}', 'PageController@showNew');
 
-Route::get('/catalog/{slug}', 'CatalogController@show');
+Route::get('/catalog/item/{id}', 'CatalogController@show');

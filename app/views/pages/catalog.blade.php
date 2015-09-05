@@ -21,7 +21,7 @@
                     <div class="col-md-4 onscroll-animate">
                         <article>
                             <div class="post-preview">
-                                <a href="/catalog/{{ $item->slug }}">
+                                <a href="/catalog/item/{{ $item->id }}">
                                     <section>
                                         <div class="post-preview-img">
                                             <div class="post-preview-img-inner">
@@ -40,7 +40,7 @@
                                     <h2 class="post-preview-heading">{{ $item->name }}</h2>
                                     <p>{{ str_limit($item->description, $limit = 70, $end = '...') }}</p>
                                     <div class="post-preview-price-container">
-                                        <a href="/catalog/{{ $item->slug }}" class="read-more-link-alt">Детальніше</a>
+                                        <a href="/catalog/item/{{ $item->id }}" class="read-more-link-alt">Детальніше</a>
                                         <p class="listing-price">{{ $item->price }} {{ $item->currency }} <span class="small">{{ $item->pay_type }}</span></p>
                                     </div>
                                     <div class="post-preview-detail">

@@ -234,7 +234,7 @@
                                         @foreach($same_objects as $same)
                                     	<article>
                                             <div class="post-preview-alt">
-                                                <a href="/catalog/{{ $same->slug }}">
+                                                <a href="/catalog/item/{{ $same->id }}">
                                                     <section>
                                                         <div class="post-preview-img">
                                                             <div class="post-preview-img-inner">

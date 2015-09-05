@@ -44,9 +44,9 @@ class CatalogController extends \BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function show($slug)
+	public function show($id)
 	{
-		$object = Object::where('slug', $slug)->where('active', 1)->get();
+		$object = Object::where('id', $id)->where('active', 1)->get();
 
 		// if($item->active !== 1) {
 		// 	return App::abort(404);

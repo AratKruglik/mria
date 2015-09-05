@@ -1,7 +1,7 @@
 @extends('admin.layouts.layout')
 
 @section('title')
-Товары
+Об'єкти нерухомості
 @stop
 
 @section('styles')
@@ -29,7 +29,7 @@
                   <div class="col-lg-12">
                       <section class="panel">
                           <header class="panel-heading">
-                              Все товары
+                              Всі об'єкти нерухомості
                           </header>
                           <div class="panel-body">
                               @if (isset($mess))
@@ -39,56 +39,50 @@
                                   </button>
                                   <h4>
                                       <i class="icon-ok-sign"></i>
-                                      Успешно!
+                                      Успішно!
                                   </h4>
                                   <p>{{ $mess }}</p>
                                 </div>
                               @endif
                                 <div class="adv-table">
                                   <div class="col-sm-10 pull-left">
-                                      <a href="goods/add" class="btn btn-info "><i class="icon-plus"></i> Добавить новый товар</a>
+                                      <a href="objects/add" class="btn btn-info "><i class="icon-plus"></i> Додати новий об'єкт</a>
                                   </div>
                                     <table  class="display table table-bordered table-striped" id="portfolio">
                                       <thead>
                                       <tr>
                                           <th>ID</th>
-                                          <th>Название</th>
-                                          <th>Цена (грн.)</th>
-                                          <th>Со скидкой (грн.)</th>
-                                          <th>Добавлено</th>
-                                          <th>Изменено</th>
-                                          <th class="hidden-phone">Топ-10</th>
-                                          <th class="hidden-phone">Видимость</th>
-                                          <th class="hidden-phone">Действия</th>
+                                          <th>Заголовок</th>
+                                          <th>Адреса</th>
+                                          <th>Ціна</th>
+                                          <th>Вид</th>
+                                          <th>Додано</th>
+                                          <th class="hidden-phone">Видимість</th>
+                                          <th class="hidden-phone">Дії</th>
                                       </tr>
                                       </thead>
                                       <tbody>
-                                        @foreach($goods as $item)
+                                        @foreach($objects as $item)
                                       <tr class="gradeX">
                                           <td>{{ $item->id}}</td>
                                           <td>{{ $item->name }}</td>
-                                          <td>{{ $item->price }}</td>
-                                          <td>{{ $item->sale }}</td>
+                                          <td>{{ $item->address }}</td>
+                                          <td>{{ $item->price }} {{ $item->currency }}</td>
+                                          <td>{{ $item->case_type }}</td>
                                           <td class="center">{{ date('d.m.Y', strtotime($item->created_at)) }}</td>
-                                          <td class="center">{{ date('d.m.Y', strtotime($item->updated_at)) }}</td>
                                           <td class="center hidden-phone">
-                                            @if($item->on_top == 1) <span class="label label-success">ТОП</span> 
-                                              @else <span class="label label-danger">Не ТОП</span>
-                                            @endif
-                                          </td>
-                                          <td class="center hidden-phone">
-                                            @if($item->active == 1) <span class="label label-success">Видимый</span> 
-                                              @else <span class="label label-danger">Невидимый</span>
+                                            @if($item->active == 1) <span class="label label-success">Активний</span> 
+                                              @else <span class="label label-danger">Неактивний</span>
                                             @endif
                                             </td>
                                           <td class="center hidden-phone">
                                             <div class="btn-group">
-                                              <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle btn-sm" type="button">Действия <span class="caret"></span>
+                                              <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle btn-sm" type="button">Дії над о'єктом<span class="caret"></span>
                                               </button>
                                               <ul role="menu" class="dropdown-menu">
-                                                  <li><a href="goods/edit/{{ $item->id }}"><span class="fa icon-edit"></span> Изменить</a></li>
+                                                  <li><a href="objects/edit/{{ $item->id }}"><span class="fa icon-edit"></span> Змінити</a></li>
                                                   <li class="divider"></li>
-                                                  <li><a href="goods/drop/{{ $item->id }}" onclick="return window.confirm('Вы точно хотите удалить товар {{ $item->name }}')"> <span class="fa icon-trash"></span> Удалить</a></li>
+                                                  <li><a href="objects/drop/{{ $item->id }}" onclick="return window.confirm('Ви дійсно хочете видалити обєкт #{{ $item->id }}?')"> <span class="fa icon-trash"></span> Видалити</a></li>
                                               </ul>
                                             </div><!-- /btn-group -->
                                           </td>
@@ -98,14 +92,13 @@
                                       <tfoot>
                                       <tr>
                                           <th>ID</th>
-                                          <th>Название</th>
-                                          <th>Цена (грн.)</th>
-                                          <th>Со скидкой (грн.)</th>
-                                          <th>Добавлено</th>
-                                          <th>Изменено</th>
-                                          <th class="hidden-phone">Топ-10</th>
-                                          <th class="hidden-phone">Видимость</th>
-                                          <th class="hidden-phone">Действия</th>
+                                          <th>Заголовок</th>
+                                          <th>Адреса</th>
+                                          <th>Ціна</th>
+                                          <th>Вид</th>
+                                          <th>Додано</th>
+                                          <th class="hidden-phone">Видимість</th>
+                                          <th class="hidden-phone">Дії</th>
                                       </tr>
                                       </tfoot>
                           </table>

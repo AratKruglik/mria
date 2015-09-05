@@ -17,29 +17,75 @@ class DashboardController extends \BaseController {
 
 	// OBJECTS
 	public function objects() {
-		$users = User::all();
+		$objects = Object::all();
 
-		return View::make('admin.index')->with('users', $users);
+		return View::make('admin.objects')->with('objects', $objects);
+	}
+
+	public function objectAdd() {
+		$data = Input::all();
+		
+		$validator = Validator::make($data, Object::rules(), Object::errors());
+
+		if ($validator->fails()) {
+			return Redirect::back()->withErrors($validator)->withInput();
+		
+		} else {
+			
+			$item = Object::objectAdd($data);
+
+			if (Input::hasFile('cover')) {
+				Object::coverUpload(Input::file('cover'), $item->id);
+			 }
+
+			$message = "О'бєкт '.$item->name.' успішно додано в базу";
+
+			return Redirect::to('/dashboard/objects')->with('mess', $message);
+		}
+	}
+
+	public function objectEdit() {
+		$data = Input::all();
+		
+		$validator = Validator::make($data, Object::rules(), Object::errors());
+
+		if ($validator->fails()) {
+			return Redirect::back()->withErrors($validator)->withInput();
+		
+		} else {
+			
+			$item = Object::objectEdit($data, $data["id"]);
+
+			if (Input::hasFile('cover')) {
+				Object::coverUpload(Input::file('cover'), $item->id);
+			 }
+
+			$message = "Обєкт ".$item->name." успішно додано в базу";
+
+			return Redirect::to('/dashboard/objects')->with('mess', $message);
+		}
+	}
+
+	public function objectDrop($id) {
+		$item = Object::find($id);
+
+		$dir = public_path().'/images/catalog/'.$item->id.'/';
+		
+		if ($objs = glob($dir."/*")) {
+		   foreach($objs as $obj) {
+		     is_dir($obj) ? removeDirectory($obj) : unlink($obj);
+		   }
+    	}
+    	rmdir($dir);
+
+		$item->delete();
+
+		return Redirect::to('/dashboard/objects');
 	}
 	//END
 	
 
 
-
-
-
-
-
-
-
-public function getPages() {
-		return View::make('admin.index');
-	}
-
-
-	public function articles2() {
-		return View::make('admin.index');
-	}
 
 
 	// ARTICLES FUNCTIONS
