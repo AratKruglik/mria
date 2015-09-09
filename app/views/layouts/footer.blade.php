@@ -30,8 +30,8 @@
                                 <div class="icon-opening-container">
                                     <div class="icon-opening"><i class="fa fa-phone"></i></div>
                                     <div class="icon-opening-content">{{ $config->phone }}</div>
-                                    <div class="icon-opening"><i class="fa fa-mobile-phone text-big"></i></div>
-                                    <div class="icon-opening-content">{{ $config->phone2 }}</div>
+                                    @if($config->phone2 !== "")<div class="icon-opening"><i class="fa fa-mobile-phone text-big"></i></div>
+<div class="icon-opening-content">{{ $config->phone2 }}</div>@endif
                                 </div>
                             </div>
                             <div class="icon-opening-wrapper">

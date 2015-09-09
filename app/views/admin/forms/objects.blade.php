@@ -252,6 +252,20 @@
 </div>
 
 <div class="form-group">
+	<label class="col-sm-2 control-label col-lg-2">Агент</label>
+	<div class="col-lg-10">
+		<select class="form-control m-bot15" name="agent_id" required>
+			<option @if(!isset($item))selected @endif disabled>- Агент -</option>
+			@if(isset($agents))
+				@foreach($agents as $agent)
+					<option value="{{ $agent->id }}" @if(isset($item) && $agent->id == $item->agent_id) selected @endif>{{ $agent->name }} {{ $agent->lastname }}</option>
+				@endforeach
+			@endif
+		</select>
+	</div>
+</div>
+
+<div class="form-group">
 	<label class="control-label col-md-2">Терміново</label>
 		<div class="col-sm-10">
                 <div class="switch switch-square" data-on-label="<i class=' icon-ok'></i>" data-off-label="<i class='icon-remove'></i>">
@@ -272,7 +286,6 @@
 @endif
 
 @if(isset($item)) <input type="hidden" name="id" value="{{ $item->id }}"> @endif
-<input type="hidden" name="agent_id" value="{{ Auth::user()->id }}">
 
 <div class="form-group">
 	<label class="col-sm-2 control-label"></label>

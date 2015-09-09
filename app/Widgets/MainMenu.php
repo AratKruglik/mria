@@ -13,7 +13,7 @@ class MainMenu extends AbstractWidget {
      */
 	public function run()
 	{	
-		$menu = DB::table('menus')->where('active', 1)->orderBy('id')->get();
+		$menu = DB::table('menus')->where('active', 1)->orderBy('ordered')->get();
 		return View::make('widgets.mainmenu', ['menus' => $menu]);
 	}
 }

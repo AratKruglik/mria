@@ -1,7 +1,7 @@
 @extends('admin.layouts.layout')
 
 @section('title')
-Галерея фото
+Сторінки сайту
 @stop
 
 @section('styles')
@@ -9,12 +9,12 @@
     <link href="/admin/css/bootstrap.min.css" rel="stylesheet">
     <link href="/admin/css/bootstrap-reset.css" rel="stylesheet">
     <!--external css-->
-    <link href="/admin/assets/font-awesome/css/font-awesome.css" rel="stylesheet">
-    <link href="/admin/assets/advanced-datatable/media/css/demo_page.css" rel="stylesheet">
-    <link href="/admin/assets/advanced-datatable/media/css/demo_table.css" rel="stylesheet">
+    <link href="/admin/assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="/admin/assets/advanced-datatable/media/css/demo_page.css" rel="stylesheet" />
+    <link href="/admin/assets/advanced-datatable/media/css/demo_table.css" rel="stylesheet" />
     <!-- Custom styles for this template -->
     <link href="/admin/css/style.css" rel="stylesheet">
-    <link href="/admin/css/style-responsive.css" rel="stylesheet">
+    <link href="/admin/css/style-responsive.css" rel="stylesheet" />
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 tooltipss and media queries -->
     <!--[if lt IE 9]>
@@ -29,57 +29,67 @@
                   <div class="col-lg-12">
                       <section class="panel">
                           <header class="panel-heading">
-                              Галерея фото для о'бєктів нерухомості
+                              Всі сторінки
                           </header>
                           <div class="panel-body">
-                              @if (isset($message))
+                              @if (isset($mess))
                                 <div class="alert alert-success alert-block fade in">
                                   <button data-dismiss="alert" class="close close-sm" type="button">
                                       <i class="icon-remove"></i>
                                   </button>
                                   <h4>
                                       <i class="icon-ok-sign"></i>
-                                      Успешно!
+                                      Успішно!
                                   </h4>
-                                  <p>{{ $message }}</p>
+                                  <p>{{ $mess }}</p>
                                 </div>
                               @endif
                                 <div class="adv-table">
-{{--                                   <div class="col-sm-10 pull-left">
-                                      <a href="portfolio/add" class="btn btn-info "><i class="icon-plus"></i> Добавить проект</a>
-                                  </div> --}}
+                                  <div class="col-sm-10 pull-left">
+                                      <a href="pages/add" class="btn btn-info "><i class="icon-plus"></i> Додати нову сторінку</a>
+                                  </div>
                                     <table  class="display table table-bordered table-striped" id="portfolio">
                                       <thead>
                                       <tr>
                                           <th>ID</th>
-                                          <th>Назва</th>
+                                          <th>Заголовок</th>
                                           <th>Додано</th>
-                                          <th>Зміни</th>
                                           <th class="hidden-phone">Видимість</th>
+                                          <th class="hidden-phone">Дії</th>
                                       </tr>
                                       </thead>
                                       <tbody>
-                                        @foreach($galleries as $gallery)
+                                        @foreach($items as $item)
                                       <tr class="gradeX">
-                                          <td>{{ $gallery->id }}</td>
-                                          <td><a href="gallery/edit/{{ $gallery->id }}">{{ $gallery->name }}</a></td>
-                                          <td class="center">{{ date('d.m.Y', strtotime($gallery->created_at)) }}</td>
-                                          <td class="center">{{ date('d.m.Y', strtotime($gallery->updated_at)) }}</td>
+                                          <td>{{ $item->id}}</td>
+                                          <td>{{ $item->name }}</td>
+                                          <td class="center">{{ date('d.m.Y', strtotime($item->created_at)) }}</td>
                                           <td class="center hidden-phone">
-                                            @if($gallery->active == 1) <span class="label label-success">Активний</span> 
-                                              @else <span class="label label-danger">Неактивний</span>
+                                            @if($item->active == 1) <span class="label label-success">Активна</span> 
+                                              @else <span class="label label-danger">Неактивна</span>
                                             @endif
                                             </td>
+                                          <td class="center hidden-phone">
+                                            <div class="btn-group">
+                                              <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle btn-sm" type="button">Дії над сторінкою<span class="caret"></span>
+                                              </button>
+                                              <ul role="menu" class="dropdown-menu">
+                                                  <li><a href="pages/edit/{{ $item->id }}"><span class="fa icon-edit"></span> Змінити</a></li>
+                                                  <li class="divider"></li>
+                                                  <li><a href="pages/drop/{{ $item->id }}" onclick="return window.confirm('Ви дійсно хочете видалити сторінку #{{ $item->name }}?')"> <span class="fa icon-trash"></span> Видалити</a></li>
+                                              </ul>
+                                            </div><!-- /btn-group -->
+                                          </td>
                                       </tr>
                                         @endforeach
                                       </tbody>
                                       <tfoot>
                                       <tr>
                                           <th>ID</th>
-                                          <th>Назва</th>
+                                          <th>Заголовок</th>
                                           <th>Додано</th>
-                                          <th>Зміни</th>
                                           <th class="hidden-phone">Видимість</th>
+                                          <th class="hidden-phone">Дії</th>
                                       </tr>
                                       </tfoot>
                           </table>

@@ -29,5 +29,5 @@
                 </a>
             </li>
       	</ul>
-    	</div><!-- .section-content -->
+    </div><!-- .section-content -->
 </section>

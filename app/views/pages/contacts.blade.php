@@ -26,12 +26,14 @@
                                     <div class="icon-opening-content">{{ $config->phone }}</div>
                                 </div>
                             </div>
+                             @if($config->phone2 !== "")
                             <div class="icon-opening-wrapper">
                                 <div class="icon-opening-container">
                                     <div class="icon-opening"><i class="fa fa-mobile-phone text-big"></i></div>
                                     <div class="icon-opening-content">{{ $config->phone2 }}</div>
                                 </div>
                             </div>
+                            @endif
                             <div class="icon-opening-wrapper">
                                 <div class="icon-opening-container">
                                     <div class="icon-opening"><i class="fa fa-envelope-alt"></i></div>
@@ -42,6 +44,20 @@
                                     <div class="icon-opening-content">{{ $config->address }}</div>
                                 </div>
                             </div>
+                            <p>
+                                <div class="social-container">
+                                    <a href="{{ $config->facebook }}"><i class="fa fa-facebook"></i></a>
+                                </div>
+                                <div class="social-container">
+                                    <a href="{{ $config->twitter }}"><i class="fa fa-twitter"></i></a>
+                                </div>
+                                <div class="social-container">
+                                    <a href="{{ $config->vk }}"><i class="fa fa-vk"></i></a>
+                                </div>
+                                <div class="social-container">
+                                    <a href="{{ $config->google }}"><i class="fa fa-google-plus"></i></a>
+                                </div>
+                            </p>
                         </div>
                         <div class="margin-40"></div>
                     @endforeach

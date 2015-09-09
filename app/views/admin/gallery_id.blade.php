@@ -1,7 +1,7 @@
-@extends('admin.layout')
+@extends('admin.layouts.layout')
 
 @section('title')
-  @if(isset($project->title)){{ $project->title }} | @endif Галлерея
+  @if(isset($project->title)){{ $project->title }} | @endif Галерея
 @stop
 
 @section('styles')
@@ -21,6 +21,7 @@
     <link href="/admin/css/style-responsive.css" rel="stylesheet" />
     <link href="/admin/assets/fancybox/source/jquery.fancybox.css" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="/admin/css/gallery.css" />
+    <link href="/admin/assets/dropzone/css/dropzone.css" rel="stylesheet"/>
 @stop
 
 @section('content')
@@ -29,7 +30,7 @@
   <div class="col-lg-12">
     <section class="panel">
       <header class="panel-heading">
-       @if(isset($project->title)) {{ $project->title }} - Галлерея фото @endif
+       @if(isset($item->name)) {{ $item->name }} - Галерея фото @endif
       </header>
       @if($errors->any())
       <div class="alert alert-block alert-danger fade in">
@@ -164,6 +165,27 @@
                       </ul>
       </div>
     </section>
+
+    <!--main content start-->
+      <section id="main-content">
+          <section class="wrapper site-min-height">
+              <!-- page start-->
+              <section class="panel">
+                  <header class="panel-heading">
+                      Dropzone File Upload
+                  </header>
+                  <div class="panel-body">
+                      {{-- <form action="assets/dropzone/upload.php" class="dropzone" id="my-awesome-dropzone"> --}}
+                      {{ Form::open(['action' => 'DashboardController@galleryPhotoUpload', 'method' => 'post', 'enctype' => 'multipart/form-data', 'class' => 'dropzone', 'id' => 'my-awesome-dropzone']) }}              
+                      <input type="hidden" name="id" value="{{ $item->id }}">                    
+  {{-- ПРОСТУЮ ФОРМУ НА 5 ИНПУТОВ --}}
+                      {{ Form::close() }}
+                  </div>
+              </section>
+              <!-- page end-->
+          </section>
+      </section>
+      <!--main content end-->
   </div>
 </div>
 <!-- page end-->
@@ -174,10 +196,11 @@
     <script src="/admin/js/jquery.js"></script>
     <script src="/admin/js/bootstrap.min.js"></script>
     <script class="include" type="text/javascript" src="/admin/js/jquery.dcjqaccordion.2.7.js"></script>
-     <script src="/admin/assets/fancybox/source/jquery.fancybox.js"></script>
+    <script src="/admin/assets/fancybox/source/jquery.fancybox.js"></script>
     <script src="/admin/js/jquery.scrollTo.min.js"></script>
     <script src="/admin/js/jquery.nicescroll.js" type="text/javascript"></script>
     <script src="/admin/js/respond.min.js" ></script>
+    <script src="/admin/assets/dropzone/dropzone.js"></script>
 
     <script src="/admin/js/modernizr.custom.js"></script>
     <script src="/admin/js/toucheffects.js"></script>

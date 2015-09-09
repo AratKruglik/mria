@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="img/favicon.png">
 
-    <title>@yield('title') - Админпанель</title>
+    <title>@yield('title') - Адмінпанель</title>
         {{ HTML::style('/css/font-awesome.min.css') }}
+        {{ HTML::style('https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css') }}
         @yield('styles')
   </head>
 
@@ -35,9 +36,9 @@
                         </a>
                         <ul class="dropdown-menu extended logout">
                             <div class="log-arrow-up"></div>
-                            <li><a href="/dashboard/users/edit/{{Auth::user()->id}}"><i class=" icon-suitcase"></i>Профіль</a></li>
+                            {{-- <li><a href="/dashboard/users/edit/{{Auth::user()->id}}"><i class=" icon-suitcase"></i>Профіль</a></li>
                             <li><a href="/dashboard/settings"><i class="icon-cog"></i> Налаштування</a></li>
-                            <li><a href="#"><i class="icon-bell-alt"></i> Повідомлення</a></li>
+                            <li><a href="#"><i class="icon-bell-alt"></i> Повідомлення</a></li> --}}
                             <li><a href="/users/logout"><i class="icon-key"></i> Вийти</a></li>
                         </ul>
                     </li>

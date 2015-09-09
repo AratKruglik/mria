@@ -180,34 +180,40 @@
                                 	<h1>Як зв'язатись?</h1>
                                 </div>
                                 <div class="row">
-                                	<div class="col-md-8">
+                                	<div class="col-md-6">
                                         <div class="profile">
                                         	<div class="row">
-                                            	<div class="col-xs-6">
+                                            	{{-- <div class="col-xs-6">
                                                     <div class="profile-img">
                                                         <img alt="agent" src="{{ $agent->photo }}">
                                                         <div class="profile-img-info">
                                                             <a href="#" class="profile-social"><i class="fa fa-facebook"></i></a>
                                                             <a href="#" class="profile-social"><i class="fa fa-twitter"></i></a>
-                                                            <a href="#" class="profile-social"><i class="fa fa-google-plus"></i></a>
                                                             <a href="#" class="profile-social"><i class="fa fa-linkedin"></i></a>
-                                                            <a href="#" class="profile-social"><i class="fa fa-dribbble"></i></a>
                                                         </div>
                                                     </div>
-                                                </div>
-                                                <div class="col-xs-6 text-left onscroll-animate" data-animation="fadeInUp">
+                                                </div> --}}
+                                                <div class="col-xs-12 text-left onscroll-animate" data-animation="fadeInUp">
                                     				<h5 class="profile-heading">{{ $agent->name }} {{ $agent->lastname }}</h5>
                                                     <p>{{ $agent->stuff }}</p>
                                                     <p>
                                                         <i class="fa fa-phone"></i> {{ $agent->phone }}<br>
                                                         <i class="fa fa-envelope-alt"></i> {{ $agent->email }}<br>
                                                     </p>
-                                                    <a href="/agents/{{ $agent->id }}" class="read-more-link-alt"><span class="text-smaller">Детальніше</span></a>
+                                                    <div class="social-container">
+                                                        <a href="{{ $agent->facebook }}"><i class="fa fa-facebook"></i></a>
+                                                    </div>
+                                                    <div class="social-container">
+                                                        <a href="{{ $agent->twitter }}"><i class="fa fa-twitter"></i></a>
+                                                    </div>
+                                                    <div class="social-container">
+                                                        <a href="{{ $agent->linkedin }}"><i class="fa fa-linkedin"></i></a>
+                                                    </div>
                                                 </div>
                                           	</div><!-- .row -->
                                       	</div><!-- .profile -->
                                     </div><!-- .col-md-8 -->
-                                    <div class="col-md-4 onscroll-animate" data-animation="fadeInUp">
+                                    <div class="col-md-6 onscroll-animate" data-animation="fadeInUp">
                                     	<h3 class="section-small-heading">Надішліть повідомлення</h3>
                                         <form class="form-contact" id="contact-form-agent" action="/post/messages" method="post" data-all-fields-required-msg="Бу" data-ajax-fail-msg="Будь-ласка, заповніт всі поля!" data-success-msg="Дякуємо! Ваше повідомлення надіслоно.">
                                             <input type="text" name="name" placeholder="Імя">

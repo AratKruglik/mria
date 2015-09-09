@@ -11,8 +11,8 @@
                    		<div class="col-sm-6 pull-right">
                             <div class="slide-box"> 
                             {{-- class="arrow-left" --}}
-                                <h2>Зручний пошук</h2>
-                                <p>Викоричтовуйте нашу систему пошуку і підберіть пропозицію з нерухомості саме для Вас!</p>
+                                <h2>Раді вітати!</h2>
+                                <p>Ми впевнені, що з нашою допомогою Ви обов'язково здійсните свою Мрію: купите, або продасте будинок, дачу, земельну ділянку, іншу нерухомість. Ми в цьому із задоволенням Вам допоможемо!</p>
                                 <hr>
                                 <div class="slide-price-container">
                                     <a href="/catalog" class="read-more-link-alt">Детальніше</a>
@@ -22,69 +22,40 @@
                   	</div>
                 </div><!-- .container -->
             </div><!-- .slide-1 -->
-            <div class="slide-2 bg-image bg-pattern">
+            <div class="slide-3 bg-image bg-pattern">
                 <div class="container">
                 	<div class="row">
                    		<div class="col-sm-6 pull-right">
                             <div class="slide-box-alt">
                             {{-- class="arrow-right" --}}
-                                <h2>25688 Portafino Pl, Whittier, LA 15998</h2>
-                                <p>An entertainer's paradise in the Friendly Hills community, priced to sell. Featuring 4 spacious bedrooms and 3 bathrooms (one bedroom/bath downstairs), 3170 sq ft of living space with a good size lot at approx.13414 sq ft.</p>
-                                <p><a title="Tooltip example" data-toggle="tooltip" href="#">I'm tooltip</a></p>
-                                <hr>
-                                <a href="#">4 Bedrooms</a> <span class="delimiter-inline"></span> <a href="#">3 Bathrooms</a> <span class="delimiter-inline"></span> <a href="#">1 Kitchen</a> <span class="delimiter-inline"></span> <a href="#">2 Garages</a>
+                                <h2>Зручний пошук</h2>
+                                <p>Використовуйте нашу систему пошуку і підберіть пропозицію з нерухомості саме для Вас! Гнучка система дозволяє тонко підібрати необхідну пропозицію в найшвидший термін. Оберіть необхідне буквально в декілька кроків.</p>
                                 <hr>
                                 <div class="slide-price-container">
-                                    <a href="property_single.html" class="read-more-link-alt">Детальніше</a>
-                                    <p class="listing-price">350.000 грн.</p>
+                                    <a href="/catalog" class="read-more-link-alt">Детальніше</a>
                                 </div>
                             </div>
                        	</div>
                   	</div>
                 </div><!-- .container -->
             </div><!-- .slide-2 -->
-            <div class="slide-3 bg-image bg-pattern">
+            <div class="slide-2 bg-image bg-pattern">
                 <div class="container">
                 	<div class="row">
-                   		<div class="col-sm-6">
+                   		<div class="col-sm-6 pull-right">
                             <div class="slide-box">
                             {{-- class="arrow-right" --}}
-                                <h2>25688 Portafino Pl, Whittier, LA 15998</h2>
-                                <p>An entertainer's paradise in the Friendly Hills community, priced to sell. Featuring 4 spacious bedrooms and 3 bathrooms (one bedroom/bath downstairs), 3170 sq ft of living space with a good size lot at approx.13414 sq ft.</p>
-                                <p><a title="Tooltip example" data-toggle="tooltip" href="#">I'm tooltip</a></p>
-                                <hr>
-                                <a href="#">4 Bedrooms</a> <span class="delimiter-inline"></span> <a href="#">3 Bathrooms</a> <span class="delimiter-inline"></span> <a href="#">1 Kitchen</a> <span class="delimiter-inline"></span> <a href="#">2 Garages</a>
+                                <h2>Кваліфікована команда</h2>
+                                <p>Наші фахівці підберуть найбільш відповідний варіант, залежно від місця розташування, вартості, площі земельних ділянок, наявних систем комунікацій, особливостей місцевості та ін. А також з нашою допомогою Ви можете надійно і швидко знайти і купити будинок або об'єкт комерційної нерухомості в Броварському районі, Київської області.</p>
                                 <hr>
                                 <div class="slide-price-container">
-                                    <a href="property_single.html" class="read-more-link-alt">Детальніше</a>
-                                    <p class="listing-price">350.000 грн.</p>
+                                    <a href="/catalog" class="read-more-link-alt">Детальніше</a>
                                 </div>
                             </div>
                        	</div>
                   	</div>
                 </div><!-- .container -->
             </div><!-- .slide-3 -->
-            <div class="slide-4 bg-image bg-pattern">
-                <div class="container">
-                	<div class="row">
-                   		<div class="col-sm-6">
-                            <div class="slide-box">
-                            {{-- class="arrow-right" --}}
-                                <h2>25688 Portafino Pl, Whittier, LA 15998</h2>
-                                <p>An entertainer's paradise in the Friendly Hills community, priced to sell. Featuring 4 spacious bedrooms and 3 bathrooms (one bedroom/bath downstairs), 3170 sq ft of living space with a good size lot at approx.13414 sq ft.</p>
-                                <p><a title="Tooltip example" data-toggle="tooltip" href="#">I'm tooltip</a></p>
-                                <hr>
-                                <a href="#">4 Bedrooms</a> <span class="delimiter-inline"></span> <a href="#">3 Bathrooms</a> <span class="delimiter-inline"></span> <a href="#">1 Kitchen</a> <span class="delimiter-inline"></span> <a href="#">2 Garages</a>
-                                <hr>
-                                <div class="slide-price-container">
-                                    <a href="property_single.html" class="read-more-link-alt">Детальніше</a>
-                                    <p class="listing-price">350.000 грн.</p>
-                                </div>
-                            </div>
-                       	</div>
-                  	</div>
-                </div><!-- .container -->
-            </div><!-- .slide-4 -->
         </div><!-- .master-slider -->
     </section>
     
