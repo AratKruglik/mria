@@ -51,16 +51,16 @@ class CatalogController extends \BaseController {
 		// if($item->active !== 1) {
 		// 	return App::abort(404);
 		// } else {
-			
+
 			foreach ($object as $item) {
 				$photos = Photo::where('object_id',$item->id)->get();
-			$agent = Agent::where('id', $item->agent_id)->get()->first();
-			$same = Object::where('case_type', $item->case_type)->where('active', 1)->where('id', '!=', $item->id)->orderBy('id', 'desc')->take(2)->get();
-			$type = Type::find($item->type_id);
-			
+				$agent = Agent::where('id', $item->agent_id)->get()->first();
+				$same = Object::where('case_type', $item->case_type)->where('active', 1)->where('id', '!=', $item->id)->orderBy('id', 'desc')->take(2)->get();
+				$type = Type::find($item->type_id);
+
 			return View::make('pages.property', ['item' => $item, 'photos' => $photos, 'agent' => $agent, 'same_objects' => $same, 'type' => $type]);
 			}
-			
+
 		// }
 	}
 
