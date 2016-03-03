@@ -36,7 +36,7 @@ Route::get('logout', 'UserController@getLogout');
 
 //Dashboard
 Route::group(['prefix' => 'dashboard', 'before' => 'auth'], function(){
-	
+
 	if(Auth::check()) {
         //Проверяем является ли юзер админом
         if(Auth::User()->isAdmin != 1) {
@@ -132,7 +132,7 @@ Route::group(['prefix' => 'dashboard', 'before' => 'auth'], function(){
     Route::post('agents/edit/{id}', 'DashboardController@agentEdit');
     Route::get('agents/drop/{id}', 'DashboardController@agentDrop');
     //end
-   
+
 
     // articles
     Route::get('articles', 'DashboardController@articles');
