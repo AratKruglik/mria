@@ -69,7 +69,7 @@
         	<div class="container">
                 <div class="row">
                     <div class="col-xs-6 onscroll-animate" data-animation="fadeInLeft">
-                        <p>2015 Всі права захищені. Сайт створено <a title="Arat's Webstudio" data-toggle="tooltip" href="http://arat-web.com.ua"><em>Arat's WebStudio</em></a></p>
+                        <p>&copy;&nbsp;2015 - {{ \Carbon\Carbon::today()->format('Y') }} Всі права захищені.</p>
                     </div>
                     <div class="col-xs-6 text-right onscroll-animate" data-animation="fadeInRight">
                     	<div class="socials-wrapper">
