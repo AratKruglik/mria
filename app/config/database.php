@@ -55,9 +55,9 @@ return array(
 		'mysql' => array(
 			'driver'    => 'mysql',
 			'host'      => 'localhost',
-			'database'  => 'mriyabro_laravel',
-			'username'  => 'mriyabro_laravel',
-			'password'  => 'laravel',
+			'database'  => 'mriya',
+			'username'  => 'mriya',
+			'password'  => 'mriya',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',

@@ -5,7 +5,7 @@
         </div>
         <ul class="list-values">
             <li class="onscroll-animate" data-animation="fadeInRight">
-                <a href="blog_one_column.html">
+                <a href="/catalog">
                     <article>
                         <div class="list-values-content">Квартир</div>
                         <div class="list-values-value">{{ $apartaments }}</div>
@@ -13,7 +13,7 @@
                 </a>
             </li>
             <li class="onscroll-animate" data-animation="fadeInRight" data-delay="300">
-                <a href="blog_one_column.html">
+                <a href="/catalog">
                     <article>
                         <div class="list-values-content">Будинків</div>
                         <div class="list-values-value">{{ $houses }}</div>
@@ -21,7 +21,7 @@
                 </a>
             </li>
             <li class="onscroll-animate" data-animation="fadeInRight" data-delay="500">
-                <a href="blog_one_column.html">
+                <a href="/catalog">
                     <article>
                         <div class="list-values-content">Земельних ділянок</div>
                         <div class="list-values-value">{{ $area }}</div>
