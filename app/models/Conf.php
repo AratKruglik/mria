@@ -37,10 +37,11 @@ class Conf extends \Eloquent {
 		$item->phone2 = $data['phone2'];
 		$item->address = $data['address'];
 		$item->facebook = $data['facebook'];
-		$item->vk = $data['vk'];
+		$item->about = $data['about'];
+//		$item->vk = $data['vk'];
 		$item->google = $data['google'];
 		$item->twitter = $data['twitter'];
-		$item->odnoklassniki = $data['odnoklassniki'];
+//		$item->odnoklassniki = $data['odnoklassniki'];
 
 		$item->save();
 

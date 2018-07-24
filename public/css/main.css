@@ -467,9 +467,9 @@ ul {
   z-index: 5;
 }
 .bg-image.bg-pattern:before {
-  background-image: url('../images/dot_pattern.png');
-  opacity: 0.5;
-  z-index: 1;
+  /*background-image: url('../images/dot_pattern.png');*/
+  /*opacity: 0.5;*/
+  /*z-index: 1;*/
 }
 .bg-image .section-content {
   position: relative;

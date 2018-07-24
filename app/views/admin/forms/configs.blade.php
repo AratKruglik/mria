@@ -106,23 +106,23 @@
 	</div>
 </div>
 
-<div class="form-group">
-	<label class="col-sm-2 col-sm-2 control-label">Сторінка Вконтакте</label>
-	<div class="col-lg-10">
-			{{ Form::input('text', 'vk', $items['vk'], ['class' => 'form-control', 'required']) }}
+{{--<div class="form-group">--}}
+	{{--<label class="col-sm-2 col-sm-2 control-label">Сторінка Вконтакте</label>--}}
+	{{--<div class="col-lg-10">--}}
+			{{--{{ Form::input('text', 'vk', $items['vk'], ['class' => 'form-control', 'required']) }}--}}
 
-			@if($errors->has('vk'))
-				@foreach($errors->get('vk') as $vkError)
-					<div class="alert alert-block alert-danger fade in">
-		              <button data-dismiss="alert" class="close close-sm" type="button">
-		                <i class="icon-remove"></i>
-		              </button>
-		              <strong>Помилка!</strong> {{$vkError}}
-		            </div>
-            	@endforeach
-           @endif
-	</div>
-</div>
+			{{--@if($errors->has('vk'))--}}
+				{{--@foreach($errors->get('vk') as $vkError)--}}
+					{{--<div class="alert alert-block alert-danger fade in">--}}
+		              {{--<button data-dismiss="alert" class="close close-sm" type="button">--}}
+		                {{--<i class="icon-remove"></i>--}}
+		              {{--</button>--}}
+		              {{--<strong>Помилка!</strong> {{$vkError}}--}}
+		            {{--</div>--}}
+            	{{--@endforeach--}}
+           {{--@endif--}}
+	{{--</div>--}}
+{{--</div>--}}
 
 <div class="form-group">
 	<label class="col-sm-2 col-sm-2 control-label">Сторінка Twitter</label>
@@ -160,23 +160,23 @@
 	</div>
 </div>
 
-<div class="form-group">
-	<label class="col-sm-2 col-sm-2 control-label">Сторінка Одноклассники</label>
-	<div class="col-lg-10">
-			{{ Form::input('text', 'odnoklassniki', $items['odnoklassniki'], ['class' => 'form-control', 'required']) }}
+{{--<div class="form-group">--}}
+	{{--<label class="col-sm-2 col-sm-2 control-label">Сторінка Одноклассники</label>--}}
+	{{--<div class="col-lg-10">--}}
+			{{--{{ Form::input('text', 'odnoklassniki', $items['odnoklassniki'], ['class' => 'form-control', 'required']) }}--}}
 
-			@if($errors->has('odnoklassniki'))
-				@foreach($errors->get('odnoklassniki') as $odnoklassnikiError)
-					<div class="alert alert-block alert-danger fade in">
-		              <button data-dismiss="alert" class="close close-sm" type="button">
-		                <i class="icon-remove"></i>
-		              </button>
-		              <strong>Помилка!</strong> {{$odnoklassnikiError}}
-		            </div>
-            	@endforeach
-           @endif
-	</div>
-</div>
+			{{--@if($errors->has('odnoklassniki'))--}}
+				{{--@foreach($errors->get('odnoklassniki') as $odnoklassnikiError)--}}
+					{{--<div class="alert alert-block alert-danger fade in">--}}
+		              {{--<button data-dismiss="alert" class="close close-sm" type="button">--}}
+		                {{--<i class="icon-remove"></i>--}}
+		              {{--</button>--}}
+		              {{--<strong>Помилка!</strong> {{$odnoklassnikiError}}--}}
+		            {{--</div>--}}
+            	{{--@endforeach--}}
+           {{--@endif--}}
+	{{--</div>--}}
+{{--</div>--}}
 
 <div class="form-group">
 	<label class="col-sm-2 control-label col-sm-2">Про компанію</label>
